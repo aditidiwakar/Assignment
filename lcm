@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int lcmThree(int a, int b, int c) {
+    return lcm(lcm(a, b), c);
+}
+int lcm(int a, int b) {
+    return (a * b) / gcd(a, b);
+}
+
+int main() {
+    int num1, num2, num3;
+    printf("Enter three numbers: ");
+    scanf("%d %d %d", &num1, &num2, &num3);
+    int result = lcmThree(num1, num2, num3);
+    printf("LCM of %d, %d, and %d is %d\n", num1, num2, num3, result);
+    return 0;
+}
