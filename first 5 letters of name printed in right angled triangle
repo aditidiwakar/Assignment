@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+    char pattern[] = "ADITI";
+    int length = 5; 
+    
+    for (int i = 1; i <= length; i++) {
+        for (int j = 0; j < i; j++) {
+            printf("%c ", pattern[j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
