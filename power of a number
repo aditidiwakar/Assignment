@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int p, q;
+    double r;
+    printf("Enter the base number: ");
+    scanf("%d", &p);
+    printf("Enter the exponent: ");
+    scanf("%d", &q);
+    r = pow(p, q);
+    printf("The result of %d raised to the power of %d is: %lf\n", p, q, r);
+    return 0;
+}
