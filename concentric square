@@ -1,0 +1,17 @@
+#define MIN(a,b) (a)<(b)?(a):(b)
+#include<stdio.h>
+int main()
+{
+    int n,limit;
+    printf("Enter the value of n \n");
+    scanf("%d",&n);
+    limit=2*n;
+    for(int row=1;row<limit;row++,printf("\n"))
+    {
+        for(int col=1;col<limit;col++)
+            printf("%d",MIN(MIN(row,col),MIN(limit-row,limit-col)));
+
+    }
+
+   return 0;
+}
