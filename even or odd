@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int main()
+{
+    int arr[10];
+    int odd = 0, even = 0, n;
+    printf("Enter the number of elements \n");
+    scanf("%d", &n);
+    printf("Enter the values:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    for (int i = 0; i < n; i++) {
+        if (arr[i] % 2 == 0) {
+            even = even + 1;
+        } else {
+            odd = odd + 1;
+        }
+    }
+    printf("Number of even numbers: %d\n", even);
+    printf("Number of odd numbers: %d\n", odd);
+
+    return 0;
+}
