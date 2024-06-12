@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h> 
+#define CHAR_RANGE 256 
+
+char firstNonRepeatingChar(char *str) {
+    int count[CHAR_RANGE] = {0};
+    int i;
+    for (i = 0; str[i] != '\0'; i++)
+        count[str[i]]++;
+    for (i = 0; str[i] != '\0'; i++) {
+        if (count[str[i]] == 1) {
+            return str[i];
+        }
+    }
+    return '\0'; 
+}
+int main() {
+    char str[100]; 
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin); 
+    if (str[strlen(str) - 1] == '\n')
+        str[strlen(str) - 1] = '\0';
+    char result = firstNonRepeatingChar(str);
+    if (result != '\0') {
+        printf("The first non-repeating character is %c\n", result);
+    } else {
+        printf("No non-repeating character is found\n");
+    }
+    return 0;
+}
