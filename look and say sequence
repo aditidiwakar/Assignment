@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+void next_term(char *term, char *next) {
+    int len = strlen(term);
+    int count = 1;
+    char buffer[10000] = "";
+    char str_count[10];
+
+    for (int i = 0; i < len; i++) {
+        if (i + 1 < len && term[i] == term[i + 1]) {
+            count++;
+        } else {
+            sprintf(str_count, "%d", count);
+            strcat(buffer, str_count);
+            strncat(buffer, &term[i], 1);
+            count = 1;
+        }
+    }
+    strcpy(next, buffer);
+}
+
+void look_and_say_sequence(int n) {
+    char term[10000] = "1";
+    char next[10000];
+
+    printf("%s\n", term);
+
+    for (int i = 1; i < n; i++) {
+        next_term(term, next);
+        printf("%s\n", next);
+        strcpy(term, next);
+    }
+}
+
+int main() {
+    int n = 6;
+    look_and_say_sequence(n);
+    return 0;
+}
