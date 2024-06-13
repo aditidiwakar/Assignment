@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    int limit;
+    scanf("%d", &limit);
+    for (int row = 0; row < limit; row++, printf("\n")) {
+        for (int col = 0; col < limit; col++) {
+            if (row == 0 || row == limit - 1 || col == 0 || col == limit - 1)
+                printf("1");
+            else
+                printf("0");
+        }
+    }
+    return 0;
+}
